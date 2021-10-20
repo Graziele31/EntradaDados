@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="EntradaDados.MainPage">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Opções de lazer: " FontSize="20"/>
+            <Picker x:Name="pck1" Title="Opções de lazer">
+                <Picker.Items>
+                    <x:String>Livro</x:String>
+                    <x:String>Corrida</x:String>
+                    <x:String>Filmes</x:String>
+                    <x:String>Séries</x:String>
+                    <x:String>Jogos</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Cadastrar Nome">
+                    <EntryCell Label="Nome " x:Name="TxtNome" 
+                               Keyboard="Text"/>
+                    <EntryCell x:Name="TxtEmail"
+                           Label="Email" IsEnabled="False"
+                           Placeholder="Digite o email" 
+                           Keyboard="Email"/>
+                    <SwitchCell x:Name="SwitchEnviaEmail"
+                            Text="Enviar E-Mail?"
+                            OnChanged="swt"
+                            On="False"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+
+        <Button Text="Enviar" Clicked="Button_Clicked" />
+        <Label Text="Dados Recebidos: " x:Name="lbNome" 
+               FontSize="20" FontAttributes="Bold" 
+               BackgroundColor="Beige" />
+        <Button Text="Limpar" Clicked="BtLimpar" FontSize="20" FontAttributes="Bold"/>
+    </StackLayout>
+
+</ContentPage>
